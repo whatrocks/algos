@@ -1,0 +1,98 @@
+<p>A <strong>deque</strong>, also known as a double-ended queue, is an ordered
+collection of items similar to the queue. It has two ends, a front and a
+rear, and the items remain positioned in the collection. What makes a
+deque different is the unrestrictive nature of adding and removing
+items. New items can be added at either the front or the rear. Likewise,
+existing items can be removed from either end. In a sense, this hybrid
+linear structure provides all the capabilities of stacks and queues in a
+single data structure.</p>
+<p>
+  <figure>
+    <img src="figures/basic-deque.png" alt="A deque of Python data objects">
+    <figcaption>A deque of Python data objects</figcaption>
+  </figure></p>
+<h2 id="the-deque-abstract-data-type">The Deque Abstract Data Type</h2>
+<p>The deque abstract data type is defined by the following structure and
+operations. A deque is structured, as described above, as an ordered
+collection of items where items are added and removed from either end,
+either front or rear. The deque operations are given below.</p>
+<ul>
+<li><code>Deque()</code> creates a new deque that is empty. It needs no parameters
+and returns an empty deque.</li>
+<li><code>add_front(item)</code> adds a new item to the front of the deque. It needs
+the item and returns nothing.</li>
+<li><code>add_rear(item)</code> adds a new item to the rear of the deque. It needs
+the item and returns nothing.</li>
+<li><code>remove_front()</code> removes the front item from the deque. It needs no
+parameters and returns the item. The deque is modified.</li>
+<li><code>remove_rear()</code> removes the rear item from the deque. It needs no
+parameters and returns the item. The deque is modified.</li>
+<li><code>is_empty()</code> tests to see whether the deque is empty. It needs no
+parameters and returns a boolean value.</li>
+<li><code>size()</code> returns the number of items in the deque. It needs no
+parameters and returns an integer.</li>
+</ul>
+<p>As an example, if we assume that <code>d</code> is a deque that has been created
+and is currently empty, the table below shows the results
+of a sequence of deque operations.</p>
+<table>
+<thead>
+<tr>
+<th>Deque Operation</th>
+<th>Deque Contents</th>
+<th>Return Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>d.is_empty()</code></td>
+<td><code>[]</code></td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>d.add_rear(4)</code></td>
+<td><code>[4]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>d.add_rear(&#39;dog&#39;)</code></td>
+<td><code>[&#39;dog&#39;, 4]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>d.add_front(&#39;cat&#39;)</code></td>
+<td><code>[&#39;dog&#39;, 4, &#39;cat&#39;]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>d.add_front(True)</code></td>
+<td><code>[&#39;dog&#39;, 4,&#39;cat&#39;, True]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>d.size()</code></td>
+<td><code>[&#39;dog&#39;, 4, &#39;cat&#39;, True]</code></td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><code>d.is_empty()</code></td>
+<td><code>[&#39;dog&#39;, 4, &#39;cat&#39;, True]</code></td>
+<td><code>False</code></td>
+</tr>
+<tr>
+<td><code>d.add_rear(8.4)</code></td>
+<td><code>[8.4, &#39;dog&#39;, 4, &#39;cat&#39;,True]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>d.remove_rear()</code></td>
+<td><code>[&#39;dog&#39;, 4, &#39;cat&#39;, True]</code></td>
+<td><code>8.4</code></td>
+</tr>
+<tr>
+<td><code>d.remove_front()</code></td>
+<td>`[&#39;dog&#39;, 4, &#39;cat&#39;]</td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
